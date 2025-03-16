@@ -8,8 +8,8 @@ resource "random_id" "bucket_suffix" {
 }
 
 # Create the S3 bucket with a unique name
-resource "aws_s3_bucket" "ai_ecom_kofi_bucket" {
-  bucket = "ai-ecom-kofi-bucket-${random_id.bucket_suffix.id}"
+resource "aws_s3_bucket" "ai-ecom-kofi-bucket" {
+  bucket = "ai-ecom-kofi-bucket-${lower(random_id.bucket_suffix.id)}"
 
   # Add tags for better resource management
   tags = {
